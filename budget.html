@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,131 +14,142 @@
       --text: #1c1c1e;
       --subtext: #8e8e93;
       --border: #d1d1d6;
-    }body {
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--primary);
-  color: var(--text);
-  margin: 0;
-  padding: 0;
-}
+    }
 
-.container {
-  max-width: 500px;
-  margin: 3rem auto;
-  background: var(--card);
-  padding: 2rem;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-}
+    body {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--primary);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
 
-h2, h3 {
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: var(--text);
-}
+    .container {
+      max-width: 500px;
+      margin: 3rem auto;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
 
-label {
-  display: block;
-  font-size: 0.95rem;
-  margin-top: 1.2rem;
-  color: var(--subtext);
-  font-weight: 500;
-}
+    h2, h3 {
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
 
-input, select, button {
-  width: 100%;
-  margin-top: 0.5rem;
-  font-size: 1rem;
-}
+    label {
+      display: block;
+      font-size: 0.95rem;
+      margin-top: 1.2rem;
+      color: var(--subtext);
+      font-weight: 500;
+    }
 
-input, select {
-  padding: 0.75rem;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background-color: var(--primary);
-  color: var(--text);
-}
+    input, select, button {
+      width: 100%;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
 
-select[multiple] {
-  height: auto;
-  overflow-y: auto;
-}
+    input, select {
+      padding: 0.75rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background-color: var(--primary);
+      color: var(--text);
+    }
 
-option {
-  padding: 0.4rem;
-}
+    select[multiple] {
+      height: auto;
+      overflow-y: auto;
+    }
 
-button {
-  background-color: var(--accent);
-  color: #fff;
-  padding: 0.85rem;
-  border: none;
-  border-radius: 14px;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  transition: background 0.3s;
-}
+    option {
+      padding: 0.4rem;
+    }
 
-button:hover {
-  background-color: #005fcc;
-}
+    button {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 14px;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: background 0.3s;
+    }
 
-.result {
-  margin-top: 2rem;
-  background: #e5e5ea;
-  padding: 1.2rem;
-  border-radius: 20px;
-}
+    button:hover {
+      background-color: #005fcc;
+    }
 
-.result-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0.8rem 0;
-  font-size: 1rem;
-}
+    .result {
+      margin-top: 2rem;
+      background: #e5e5ea;
+      padding: 1.2rem;
+      border-radius: 20px;
+    }
 
-.result-item i {
-  font-size: 1.2rem;
-  color: var(--accent);
-  min-width: 20px;
-}
+    .result-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0.8rem 0;
+      font-size: 1rem;
+    }
 
-.result-item span {
-  font-weight: 500;
-  line-height: 1.4;
-}
+    .result-item i {
+      font-size: 1.2rem;
+      color: var(--accent);
+      min-width: 20px;
+    }
 
+    .result-item span {
+      font-weight: 500;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Budget Calculator</h2>
-    <label for="salary">Enter Your Salary</label>
-    <input type="number" id="salary" placeholder="₱ 0.00" /><label for="category">Select Categories</label>
-<select id="category" multiple>
-  <option value="allowance">🍱 Allowance (Food & Transport)</option>
-  <option value="family">🏠 Family Support</option>
-  <option value="savings">💰 Savings</option>
-  <option value="wants">🛍️ Personal / Wants</option>
-  <option value="buffer">⚠️ Buffer / Emergency</option>
-</select>
 
-<button onclick="calculateBudget()">Calculate Budget</button>
+    <label for="firstPayout">First Payout</label>
+    <input type="number" id="firstPayout" placeholder="₱ 0.00" />
 
-<div class="result" id="resultBox"></div>
+    <label for="secondPayoutDate">Next Payout Date</label>
+    <input type="date" id="secondPayoutDate" />
 
-<h3 style="margin-top: 2.5rem;">Savings Goal Planner</h3>
-<label for="goal">Savings Goal (e.g. cellphone, travel, etc.)</label>
-<input type="number" id="goalAmount" placeholder="Enter amount needed" />
-<label for="months">Target Months to Save</label>
-<input type="number" id="months" placeholder="0" />
-<button onclick="calculateGoal()">Calculate Savings Plan</button>
+    <label for="category">Select Categories</label>
+    <select id="category" multiple>
+      <option value="allowance">🍱 Allowance (Food & Transport)</option>
+      <option value="family">🏠 Family Support</option>
+      <option value="savings">💰 Savings</option>
+      <option value="wants">🛍️ Personal / Wants</option>
+      <option value="buffer">⚠️ Buffer / Emergency</option>
+    </select>
 
-<div class="result" id="goalResult"></div>
+    <button onclick="calculateBudget()">Calculate Budget</button>
 
-  </div>  <script>
+    <div class="result" id="resultBox"></div>
+
+    <h3 style="margin-top: 2.5rem;">Savings Goal Planner</h3>
+
+    <label for="goalAmount">Savings Goal (e.g. cellphone, travel, etc.)</label>
+    <input type="number" id="goalAmount" placeholder="Enter amount needed" />
+
+    <label for="months">Target Months to Save</label>
+    <input type="number" id="months" placeholder="0" />
+
+    <button onclick="calculateGoal()">Calculate Savings Plan</button>
+
+    <div class="result" id="goalResult"></div>
+  </div>
+
+  <script>
     const categories = {
       allowance: { percent: 0.3, icon: 'fas fa-utensils', label: 'Allowance (Food & Transport)' },
       family: { percent: 0.15, icon: 'fas fa-home', label: 'Family Support' },
@@ -147,14 +159,29 @@ button:hover {
     };
 
     function calculateBudget() {
-      const salary = parseFloat(document.getElementById("salary").value);
+      const first = parseFloat(document.getElementById("firstPayout").value) || 0;
+      const secondPayoutDate = document.getElementById("secondPayoutDate").value;
       const categorySelect = document.getElementById("category");
       const selectedOptions = Array.from(categorySelect.selectedOptions).map(opt => opt.value);
       const resultBox = document.getElementById("resultBox");
       resultBox.innerHTML = "";
 
-      if (!salary || salary <= 0) {
-        resultBox.innerHTML = "<p style='color:red;'>Please enter a valid salary.</p>";
+      if (first <= 0) {
+        resultBox.innerHTML = "<p style='color:red;'>Please enter a valid payout amount.</p>";
+        return;
+      }
+
+      if (!secondPayoutDate) {
+        resultBox.innerHTML = "<p style='color:red;'>Please select your next payout date.</p>";
+        return;
+      }
+
+      const today = new Date();
+      const payoutDate = new Date(secondPayoutDate);
+      const days = Math.ceil((payoutDate - today) / (1000 * 60 * 60 * 24));
+
+      if (days <= 0) {
+        resultBox.innerHTML = "<p style='color:red;'>Next payout date must be in the future.</p>";
         return;
       }
 
@@ -163,12 +190,18 @@ button:hover {
         return;
       }
 
-      resultBox.innerHTML = "<h3 style='margin-bottom:1rem;'>Suggested Budget Breakdown:</h3>";
+      const dailyBudget = first / days;
+
+      resultBox.innerHTML = `<h3>Total Payout: ₱${first.toFixed(2)}</h3>`;
+      resultBox.innerHTML += `<p>You need to budget your <strong>₱${first.toFixed(2)}</strong> to last <strong>${days}</strong> days until your next payout.</p>`;
+      resultBox.innerHTML += `<p><strong>Suggested Daily Budget:</strong> ₱${dailyBudget.toFixed(2)} / day</p>`;
+      resultBox.innerHTML += `<h3 style='margin-top:1.5rem;'>Suggested Budget Breakdown:</h3>`;
+
       selectedOptions.forEach(cat => {
-        const amount = (categories[cat].percent * salary).toFixed(2);
+        const amount = (categories[cat].percent * first).toFixed(2);
         const icon = categories[cat].icon;
         const label = categories[cat].label;
-        resultBox.innerHTML += `<div class='result-item'><i class='${icon}'></i><span><strong>${label}:</strong> You may allocate <strong>P${amount}</strong> for this category based on your entered salary.</span></div>`;
+        resultBox.innerHTML += `<div class='result-item'><i class='${icon}'></i><span><strong>${label}:</strong> You may allocate <strong>₱${amount}</strong> for this category.</span></div>`;
       });
     }
 
@@ -184,7 +217,9 @@ button:hover {
       }
 
       const monthlySave = (goalAmount / months).toFixed(2);
-      goalBox.innerHTML = `<h3 style='margin-top:1.5rem;'>Monthly Savings Plan</h3><p>To reach your goal of <strong>P${goalAmount}</strong>, you need to save <strong>P${monthlySave}</strong> per month for <strong>${months}</strong> months.</p>`;
+      goalBox.innerHTML = `<h3 style='margin-top:1.5rem;'>Monthly Savings Plan</h3>
+        <p>To reach your goal of <strong>₱${goalAmount}</strong>, you need to save <strong>₱${monthlySave}</strong> per month for <strong>${months}</strong> months.</p>`;
     }
-  </script></body>
+  </script>
+</body>
 </html>
